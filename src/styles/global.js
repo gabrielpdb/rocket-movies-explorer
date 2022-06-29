@@ -21,6 +21,7 @@ export default createGlobalStyle`
   }
 
   a {
+    color: ${({ theme }) => theme.COLORS.RED};
     text-decoration: none;
     display: flex;
     align-items: center;
