@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   width: 100%;
   height: 56px;
   background-color: ${props =>

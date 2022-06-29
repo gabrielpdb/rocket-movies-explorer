@@ -8,6 +8,8 @@ export const Container = styled.div`
   padding: 24px 123px;
   gap: 64px;
 
+  border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY};
+
   > a {
     font-size: 24px;
     font-weight: 700;
@@ -18,7 +20,7 @@ export const Profile = styled.div`
   min-width: 200px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 9px;
 
   > div {
