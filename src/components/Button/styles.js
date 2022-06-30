@@ -9,7 +9,7 @@ export const Container = styled.button`
   height: 56px;
   background-color: ${props =>
     props.color ? props => props.color : ({ theme }) => theme.COLORS.RED};
-  color: ${({ theme }) => theme.COLORS.TAG};
+  color: ${({ theme, color }) => (color ? theme.COLORS.RED : theme.COLORS.TAG)};
 
   border: 0;
   padding: 0 16px;
