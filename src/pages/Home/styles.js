@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
   margin: 50px auto;
   padding: 0 123px;
 
@@ -21,8 +24,10 @@ export const Container = styled.div`
   }
 
   .moviesList {
+    max-height: 60vh;
     display: flex;
     flex-direction: column;
     gap: 24px;
+    overflow-y: auto;
   }
 `
