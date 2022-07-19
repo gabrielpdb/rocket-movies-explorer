@@ -23,7 +23,7 @@ export function Header() {
           <a onClick={signOut}>sair</a>
         </div>
 
-        <img src={avatarUrl} alt="" />
+        <img src={avatarUrl} alt="Avatar do usuário" />
       </Profile>
     </Container>
   )
