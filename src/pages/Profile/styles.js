@@ -17,6 +17,16 @@ export const Container = styled.div`
     font-size: 16px;
     font-weight: 400;
     line-height: 21px;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: transparent;
+      border: none;
+      color: ${({ theme }) => theme.COLORS.RED};
+    }
   }
 `
 

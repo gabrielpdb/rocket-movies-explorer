@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
   width: 100%;
@@ -16,7 +17,7 @@ export const Container = styled.div`
   }
 `
 
-export const Profile = styled.div`
+export const Profile = styled(Link)`
   min-width: 200px;
   display: flex;
   align-items: center;
