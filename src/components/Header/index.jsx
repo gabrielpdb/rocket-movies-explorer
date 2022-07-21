@@ -31,7 +31,7 @@ export function Header({ setSearch }) {
             handleSearch(e.target.value)
           }
         }}
-        value={location.state}
+        value={location.state ? location.state : ''}
       />
       <Profile to="/profile">
         <div>
