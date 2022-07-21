@@ -36,7 +36,9 @@ export const Profile = styled(Link)`
       font-weight: 700;
     }
 
-    > a {
+    > button {
+      background: transparent;
+      border: none;
       color: ${({ theme }) => theme.COLORS.TEXT_GRAY};
       font-size: 14px;
       font-weight: 400;

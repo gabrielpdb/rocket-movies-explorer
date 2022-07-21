@@ -13,6 +13,11 @@ export function Home() {
   const [search, setSearch] = useState('')
   const navigate = useNavigate()
 
+  function handleDetails(id) {
+    console.log('foi')
+    navigate(`/details/${id}`)
+  }
+
   useEffect(() => {
     async function fetchNotes() {
       const response = await api.get(`/movie_notes?title=${search}`)
@@ -20,11 +25,11 @@ export function Home() {
     }
 
     fetchNotes()
-  }, [])
+  }, [search])
 
   return (
     <>
-      <Header />
+      <Header setSearch={setSearch} />
       <Container>
         <div className="header">
           <h1>Meus filmes</h1>
@@ -32,17 +37,13 @@ export function Home() {
         </div>
         <div className="moviesList">
           {notes &&
-            notes.map(note => {
-              return (
-                <MovieCard
-                  key={note.id}
-                  title={note.title}
-                  description={note.description}
-                  rating={note.rating}
-                  tags={note.tags}
-                />
-              )
-            })}
+            notes.map(note => (
+              <MovieCard
+                onClick={() => handleDetails(note.id)}
+                key={note.id}
+                data={note}
+              />
+            ))}
         </div>
       </Container>
     </>

@@ -11,7 +11,7 @@ export function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/create" element={<CreateMovie />} />
-      <Route path="/preview" element={<MoviePreview />} />
+      <Route path="/details/:id" element={<MoviePreview />} />
     </Routes>
   )
 }

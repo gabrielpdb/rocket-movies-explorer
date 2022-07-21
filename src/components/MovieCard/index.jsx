@@ -3,22 +3,29 @@ import { Container } from './styles'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { useEffect, useState } from 'react'
 
-export function MovieCard({ title, description, tags, rating }) {
+export function MovieCard({ data, ...rest }) {
+  const { title, description, rating, tags } = data
   const [stars, setStars] = useState([])
 
   useEffect(() => {
     setStars([])
     for (let index = 1; index <= 5; index++) {
       if (index <= rating) {
-        setStars(prevStars => [...prevStars, <AiFillStar size={12} />])
+        setStars(prevStars => [
+          ...prevStars,
+          <AiFillStar size={12} key={index} />
+        ])
       } else {
-        setStars(prevStars => [...prevStars, <AiOutlineStar size={12} />])
+        setStars(prevStars => [
+          ...prevStars,
+          <AiOutlineStar size={12} key={index} />
+        ])
       }
     }
   }, [])
 
   return (
-    <Container>
+    <Container {...rest}>
       <h2>{title}</h2>
       <div className="stars">{stars}</div>
 
