@@ -9,65 +9,77 @@ export const Container = styled.div`
     display: flex;
     justify-content: flex-start;
     margin-bottom: 24px;
-  }
 
-  > .title {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 19px;
-    margin-bottom: 24px;
-
-    h1 {
-      font-size: 36px;
-      font-weight: 500;
-      line-height: 47px;
+    button {
+      border: none;
+      background: transparent;
+      color: ${({ theme }) => theme.COLORS.RED};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
   }
 
-  > .author {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  > main {
+    > .title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 19px;
+      margin-bottom: 24px;
 
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 18.75px;
-    margin-bottom: 40px;
+      h1 {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 47px;
+      }
+    }
 
-    .name,
-    .date {
+    > .author {
       display: flex;
       align-items: center;
       gap: 8px;
+
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18.75px;
+      margin-bottom: 40px;
+
+      .name,
+      .date {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .name img {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid ${({ theme }) => theme.COLORS.GRAY};
+      }
+
+      .date svg {
+        color: ${({ theme }) => theme.COLORS.RED};
+      }
     }
 
-    .name img {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      border: 1px solid ${({ theme }) => theme.COLORS.GRAY};
+    > .tags {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
     }
 
-    .date svg {
-      color: ${({ theme }) => theme.COLORS.RED};
+    > .description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      text-align: justify;
+
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
     }
-  }
-
-  > .tags {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 40px;
-  }
-
-  > .description {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
-    text-align: justify;
-
-    display: flex;
-    flex-direction: column;
-    gap: 21px;
   }
 `

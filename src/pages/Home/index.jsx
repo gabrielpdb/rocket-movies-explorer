@@ -6,15 +6,15 @@ import { IoMdAdd } from 'react-icons/io'
 import { MovieCard } from '../../components/MovieCard'
 import { useEffect, useState } from 'react'
 import { api } from '../../services/api'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
-export function Home() {
+export function Home({ inputSearch }) {
+  const location = useLocation()
   const [notes, setNotes] = useState([])
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState(location.state ? location.state : '')
   const navigate = useNavigate()
 
   function handleDetails(id) {
-    console.log('foi')
     navigate(`/details/${id}`)
   }
 
