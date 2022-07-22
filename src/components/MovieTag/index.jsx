@@ -1,11 +1,19 @@
 import { FiPlus, FiX } from 'react-icons/fi'
+
 import { Container } from './styles'
 
-export function MovieTag({ isNew, value }) {
+export function MovieTag({ isNew, value, onClick, ...rest }) {
   return (
     <Container isNew={isNew}>
-      {value && !isNew ? value : 'Novo marcador'}
-      {isNew ? <FiPlus /> : <FiX />}
+      <input type="text" value={value} readOnly={!isNew} {...rest} />
+
+      <button
+        type="button"
+        onClick={onClick}
+        className={isNew ? 'button-add' : 'button-delete'}
+      >
+        {isNew ? <FiPlus /> : <FiX />}
+      </button>
     </Container>
   )
 }

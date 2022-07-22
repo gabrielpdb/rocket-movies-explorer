@@ -9,6 +9,16 @@ export const Container = styled.div`
     margin: 40px 0 24px 0;
     display: flex;
     justify-content: start;
+
+    > button {
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: ${({ theme }) => theme.COLORS.RED};
+      gap: 8px;
+    }
   }
 
   > h1 {

@@ -33,7 +33,11 @@ export function Home({ inputSearch }) {
       <Container>
         <div className="header">
           <h1>Meus filmes</h1>
-          <Button title="Adicionar filme" icon={IoMdAdd} />
+          <Button
+            title="Adicionar filme"
+            icon={IoMdAdd}
+            onClick={() => navigate('/create')}
+          />
         </div>
         <div className="moviesList">
           {notes &&

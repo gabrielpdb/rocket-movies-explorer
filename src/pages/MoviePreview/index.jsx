@@ -28,14 +28,16 @@ export function MoviePreview() {
       setData(response.data)
     }
 
+    fetchNote()
+  }, [])
+
+  useEffect(() => {
     const avatarUrl = data.user_avatar
       ? `${api.defaults.baseURL}/files/${data.user_avatar}`
       : avatarPlaceholder
 
     setUserAvatar(avatarUrl)
-
-    fetchNote()
-  }, [])
+  })
 
   return (
     <>
